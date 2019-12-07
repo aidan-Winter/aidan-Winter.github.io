@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>Welcome To LifeClock</title>
+
+<!-- Creates Clock -->
+  <script>
+function startTime() {
+  var today = new Date();
+  var hours = today.getHours();
+  var minutes = today.getMinutes();
+  var seconds = today.getSeconds();
+  minutes = checkTime(minutes);
+  seconds = checkTime(seconds);
+  document.getElementById('txt').innerHTML =
+  hours + ":" + minutes + ":" + seconds;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};
+  return i;
+}
+</script>
+<style>
+body{
+  background-image: url('resources/background.jpg');
+}
+
+/* Style for clock */
+h1{
+  color: white;
+  position: relative;
+  text-align: center;
+  top: 30vh;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000000;
+}
+
+/* Style for Welcome Header */
+h2{
+  position:relative;
+  color:white;
+  top: 19vh;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000000;
+}
+
+</style>
+
+</head>
+
+<!-- Body -->
+<body onload="startTime()">
+
+  <!-- Initializes clock -->
+  <h1 style="text-align: center; color:white;font-size:10vh" id="txt"></h1>
+  <!-- Initializes welcome -->
+  <h2 style="text-align:center">Welcome</h2>
+
+<!-- Top tabs -->
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="lifeClock.html">Life Clock</a></li>
+  <li><a href="focus.html">Focus Tips</a></li>
+  <li><a href="mind.html">Mindfulness</a></li>
+  <li><a href="goals.html">Goals</a></li>
+  <li><a href="about.html">About</a></li>
+</ul>
+
+</body>
+</html>
